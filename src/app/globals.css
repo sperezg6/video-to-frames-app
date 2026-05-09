@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #FEFFF8;
+  --ink: #0A0A0A;
+  --mute: rgba(10, 10, 10, 0.5);
+  --line: rgba(10, 10, 10, 0.12);
+  --overlay-ink: rgba(10, 10, 10, 0.30);
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-firm: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-snap: 150ms;
+  --dur-soft: 350ms;
+  --dur-medium: 600ms;
+  --dur-long: 1000ms;
+
+  --font-display: var(--font-pp-neue-montreal), "Söhne", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-pp-editorial-new), "Times New Roman", Times, serif;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-line: var(--line);
+  --color-overlay-ink: var(--overlay-ink);
+
+  --font-display: var(--font-pp-neue-montreal), "Söhne", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-pp-editorial-new), "Times New Roman", Times, serif;
+
+  --ease-soft: var(--ease-soft);
+  --ease-firm: var(--ease-firm);
+}
+
+html,
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+.text-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.text-overline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
