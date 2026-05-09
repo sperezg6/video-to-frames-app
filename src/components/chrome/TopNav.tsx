@@ -13,7 +13,7 @@ export function TopNav({ onBack }: Props) {
             className="group text-overline text-mute hover:text-ink transition-colors duration-150"
             aria-label="Back to home"
           >
-            <span className="inline-block transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-x-1">
+            <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-x-[6px]">
               ←
             </span>{" "}
             Back

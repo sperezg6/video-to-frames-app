@@ -80,24 +80,22 @@ function Row({
   label: React.ReactNode;
   hint: string;
 }) {
+  const tone = active
+    ? "border-ink bg-[rgba(10,10,10,0.04)]"
+    : "border-line hover:border-[rgba(10,10,10,0.35)] hover:bg-[rgba(10,10,10,0.018)]";
+
   return (
     <button
       type="button"
       disabled={disabled}
       onClick={onClick}
-      className="group flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border transition-colors duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] text-left disabled:opacity-50 disabled:cursor-not-allowed"
-      style={{
-        borderColor: active ? "var(--ink)" : "var(--line)",
-        background: active ? "rgba(10,10,10,0.03)" : "transparent",
-      }}
+      className={`group flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border transition-[border-color,background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] text-left disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.005] active:scale-[0.998] ${tone}`}
     >
       <span className="flex items-center gap-3 text-display text-[15px]">
         <span
-          className="inline-block w-3 h-3 rounded-full transition-colors duration-150"
-          style={{
-            background: active ? "var(--ink)" : "transparent",
-            border: "1px solid var(--ink)",
-          }}
+          className={`inline-block w-3 h-3 rounded-full border border-ink transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            active ? "bg-ink" : "bg-transparent group-hover:scale-[1.15]"
+          }`}
         />
         {label}
       </span>

@@ -203,7 +203,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3">
                   <ButtonPill tone="dark" onClick={onExtract}>
                     Extract frames
-                    <span className="inline-block transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
+                    <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[6px]">
                       →
                     </span>
                   </ButtonPill>
@@ -224,7 +224,12 @@ export default function Home() {
                   Frames are rendering inside your browser. Don&apos;t close the tab.
                 </p>
                 <div>
-                  <ButtonPill onClick={onCancel}>Cancel</ButtonPill>
+                  <ButtonPill onClick={onCancel}>
+                    <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-90">
+                      ✕
+                    </span>
+                    Cancel
+                  </ButtonPill>
                 </div>
               </motion.div>
             ) : null}
@@ -243,7 +248,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3">
                   <ButtonPill tone="dark" onClick={onDownload}>
                     Download {status.zipName.endsWith(".zip") ? status.zipName : `${status.zipName}.zip`}
-                    <span className="inline-block transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-1">
+                    <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-[5px]">
                       ↓
                     </span>
                   </ButtonPill>
@@ -262,7 +267,12 @@ export default function Home() {
                 <p className="text-display text-[18px]">Something went wrong</p>
                 <p className="text-serif-italic text-mute">{status.message}</p>
                 <div>
-                  <ButtonPill onClick={reset}>Try again</ButtonPill>
+                  <ButtonPill onClick={reset}>
+                    <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-rotate-180">
+                      ↻
+                    </span>
+                    Try again
+                  </ButtonPill>
                 </div>
               </motion.div>
             ) : null}
